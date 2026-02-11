@@ -1,9 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Touchable, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Touchable, TouchableOpacity, Alert } from 'react-native';
 
 export default function App() {
   const [nome, setNome] = useState("");
+
+  function exibeTexto() {
+    Alert.alert(nome);
+  }
 
   return (
     <View style={styles.container}>
@@ -36,20 +40,20 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   titulo: {
     fontSize: 25,
-    color: '#ff0000',
+    color: '#ff0000ff',
     fontWeight: 'bold'
   },
   lblNome: {
     marginTop: 40,
     fontSize: 25,
     color: "#aaf",
-    borderBottomColor: "#faa",
+    borderBottomColor: "#ffa",
     borderBottomWidth: 4,
   },
   caixaTexto: {
